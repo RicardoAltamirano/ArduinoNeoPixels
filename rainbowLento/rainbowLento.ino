@@ -21,7 +21,7 @@ Adafruit_NeoPixel strip = Adafruit_NeoPixel(8, PIN, NEO_GRB + NEO_KHZ800);
 // on a live circuit...if you must, connect GND first.
 
 void setup() {
-  
+  strip.setBrightness(12);
   strip.begin();
   strip.show(); // Initialize all pixels to 'off'
 }
@@ -36,9 +36,9 @@ void loop() {
  // theaterChase(strip.Color(127, 127, 127), 50); // White
  // theaterChase(strip.Color(127, 0, 0), 50); // Red
  // theaterChase(strip.Color(0, 0, 127), 50); // Blue
-    blueEscala(20);
+   // blueEscala(20);
  // rainbow(20);
- // rainbowCycle(20);
+  rainbowCycle(10);
  // theaterChaseRainbow(50);
 }
 
@@ -60,7 +60,7 @@ void rainbow(uint8_t wait) {
 void rainbowCycle(uint8_t wait) {
   uint16_t i, j;
 
-  for(j=0; j<256*5; j++) { // 5 cycles of all colors on wheel
+  for(j=0; j<256; j++) { // 5 cycles of all colors on wheel
     for(i=0; i< strip.numPixels(); i++) {
       strip.setPixelColor(i, Wheel(((i * 256 / strip.numPixels()) + j) & 255));
     }
@@ -80,6 +80,12 @@ void blueEscala(uint8_t wait){
     delay(wait);
   }
   
+}
+
+void blue(uint8_t wait){
+  uint16_t i, j;
+
+  strip.setPixelColor(i, Wheel(((i * 30 / strip.numPixels()) + j) & 255));
 }
 
 

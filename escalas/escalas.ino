@@ -26,9 +26,10 @@ void setup() {
 }
 
 void loop() {
-  value = analogRead(analogPin);       // realizar la lectura analógica raw
-  position = map(value, 0, 1023, 0, 10);  // convertir a porcentaje
-  rotador(position); 
+//  value = analogRead(analogPin);       // realizar la lectura analógica raw
+//  position = map(value, 0, 1023, 0, 10);  // convertir a porcentaje
+//  rotador(position); 
+escalaAzul();
 }
 
 void rotador(int valor){
